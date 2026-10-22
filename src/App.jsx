@@ -98,7 +98,7 @@ export default function App() {
 
         const age = Date.now() - timestamp;
 
-        if (readings && Number.isFinite(timestamp) && timestamp > 0 && age >= 0 && age <age < 86400000) {
+        if (readings && Number.isFinite(timestamp) && timestamp > 0 && age >= 0 && age < 86400000) {
           setData({
             temperature: readings.temperature ?? 0,
             humidity: readings.humidity ?? 0,
@@ -153,7 +153,7 @@ export default function App() {
     if (!user || lastDataReceivedAt === null) return;
     const checkConnection = () => {
       const age = Date.now() - lastDataReceivedAt;
-      if (age >= 15000 || age < 0) {
+      if (age >=  86400000 || age < 0) {
         setEsp32Online(false);
         setData(zeroReadings);
       } else {
