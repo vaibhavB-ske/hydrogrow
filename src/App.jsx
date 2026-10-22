@@ -98,7 +98,7 @@ export default function App() {
 
         const age = Date.now() - timestamp;
 
-        if (readings && Number.isFinite(timestamp) && timestamp > 0 && age >= 0 && age < 15000) {
+        if (readings && Number.isFinite(timestamp) && timestamp > 0 && age >= 0 && age < 60000) {
           setData({
             temperature: readings.temperature ?? 0,
             humidity: readings.humidity ?? 0,
