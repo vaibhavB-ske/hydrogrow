@@ -72,7 +72,7 @@ export default function LandingPage({
         
         <div className="image-content fade-in-up delay-2">
           <img 
-            src="/image_6d6a84.png" 
+            src={`${import.meta.env.BASE_URL}image_6d6a84.png`}
             alt="Full HydroGrow Hardware System" 
             className="animated-hardware-img floating-hero"
           />
@@ -97,7 +97,7 @@ export default function LandingPage({
 
         <div className="blueprint-container fade-in-up">
           <img 
-            src="/image_6d6ac6.png" 
+            src={`${import.meta.env.BASE_URL}image_6d6ac6.png`}
             alt="HydroGrow Components and Water Flow" 
             className="animated-hardware-img slow-zoom"
           />
