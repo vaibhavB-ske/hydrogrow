@@ -90,7 +90,12 @@ export default function App() {
       ref(db, "hydroponics/current"),
       (snapshot) => {
         const readings = snapshot.val();
-        const timestamp = Number(readings?.lastUpdated);
+        const rawTimestamp = Number(readings?.lastUpdated);
+
+        const timestamp = rawTimestamp > 0
+        ? (rawTimestamp < 1e12 ? rawTimestamp * 1000 : rawTimestamp)
+        : 0;
+
         const age = Date.now() - timestamp;
 
         if (readings && Number.isFinite(timestamp) && timestamp > 0 && age >= 0 && age < 15000) {
