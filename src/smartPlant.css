@@ -1,0 +1,98 @@
+/* =========================================
+   SMART PLANT ILLUSTRATION (ULTRA ANIMATED)
+   ========================================= */
+.hydroponic-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: transparent; 
+}
+
+.hydro-plant {
+  width: 180px;
+  height: auto;
+  overflow: visible;
+  animation: float-plant 6s ease-in-out infinite;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.3));
+}
+
+.plant-shadow {
+  animation: shadow-pulse 6s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Water Glowing Effect */
+.water-fill {
+  animation: water-glow 4s ease-in-out infinite alternate;
+}
+
+/* Staggered Leaf Swaying */
+.hydro-leaf {
+  transform-origin: 100px 75px;
+}
+.hydro-leaf.leaf1 { animation: subtle-sway 4s ease-in-out infinite alternate; }
+.hydro-leaf.leaf2 { animation: subtle-sway 5s ease-in-out infinite alternate 1s; }
+.hydro-leaf.leaf3 { animation: subtle-sway 4.5s ease-in-out infinite alternate-reverse 0.5s; }
+
+/* Waving Roots in the water */
+.hydro-root {
+  transform-origin: 100px 135px;
+}
+.hydro-root.root1 { animation: root-wave 3s ease-in-out infinite alternate; }
+.hydro-root.root2 { animation: root-wave 4s ease-in-out infinite alternate-reverse; }
+.hydro-root.root3 { animation: root-wave 3.5s ease-in-out infinite alternate 0.5s; }
+
+/* Sensor Pulse */
+.sensor-pulse {
+  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Smooth Bubbles */
+.hydro-bubble {
+  animation: float-bubble linear infinite;
+}
+.hydro-bubble.b1 { animation-duration: 3s; animation-delay: 0s; }
+.hydro-bubble.b2 { animation-duration: 4s; animation-delay: 1.5s; }
+.hydro-bubble.b3 { animation-duration: 2.5s; animation-delay: 0.7s; }
+.hydro-bubble.b4 { animation-duration: 3.5s; animation-delay: 2.2s; }
+.hydro-bubble.b5 { animation-duration: 4.5s; animation-delay: 1.1s; }
+
+/* --- KEYFRAMES --- */
+@keyframes float-plant {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shadow-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.4; }
+  50% { transform: scale(0.8); opacity: 0.2; }
+}
+
+@keyframes float-bubble {
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 0.8; }
+  80% { opacity: 0.8; }
+  100% { transform: translateY(-50px); opacity: 0; }
+}
+
+@keyframes subtle-sway {
+  0% { transform: rotate(-2deg); }
+  100% { transform: rotate(3deg); }
+}
+
+@keyframes root-wave {
+  0% { transform: rotate(-3deg); }
+  100% { transform: rotate(3deg); }
+}
+
+@keyframes pulse-ring {
+  0%, 100% { opacity: 1; fill: #10b981; transform: scale(1); }
+  50% { opacity: 0.4; fill: #6ee7b7; transform: scale(1.3); }
+}
+
+@keyframes water-glow {
+  0% { opacity: 0.9; }
+  100% { opacity: 1; filter: brightness(1.2); }
+}
